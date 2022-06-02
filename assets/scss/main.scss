@@ -1,0 +1,135 @@
+/* Google Fonts API */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+* {
+  font-family: 'Quicksand', sans-serif;
+}
+
+// Variable Declarations
+$black: #000;
+$grey: #808080;
+$lightgrey: #f6f6f6;
+$shadow: rgba(0, 0, 0, 0.5);
+$skyblue: #13add5;
+
+// Variable Declaration ends
+
+// Mixin starts
+@mixin flexBox ($display, $direction, $justify, $align) {
+  display: $display;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+// Mixin ends
+
+.navBar {
+  background-color: $lightgrey;
+  @include flexBox(flex, row, space-evenly, center);
+  padding: 1rem 0;
+  position: relative;
+  z-index: 20;
+
+  .logo {
+    width: 175px;
+  }
+
+  .myNavbarToggler {
+    position: relative;
+    @include flexBox(flex, column, space-evenly, center);
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    border-radius: 0;
+    border: 1px solid $grey;
+    background-color: white;
+    padding: 0.3rem;
+
+
+    .navbarTogglerLine {
+      display: inline-block;
+      width: 95%;
+      height: 2px;
+      background-color: $black;
+      transition: 500ms;
+    }
+
+    .anim1 {
+      position: absolute;
+      transform: rotate(135deg);
+    }
+
+    .anim2 {
+      position: absolute;
+      transform: translateX(-105%);
+    }
+
+    .anim3 {
+      position: absolute;
+      transform: rotate(-135deg);
+    }
+  }
+
+  .myNavigation {
+    width: 90%;
+    position: fixed;
+    top: 80px;
+    @include flexBox(flex, column, center, center);
+    box-shadow: 0px 0px 20px $shadow;
+    transform: scale(0);
+    transition: 500ms;
+    border-radius: 0.3rem;
+    font-weight: 600;
+
+    .navbar-nav {
+      width: 90%;
+    }
+
+    .dropdown-menu {
+      width: 90%;
+    }
+
+    .dropdown-item {
+      color: $skyblue;
+      font-weight: 600;
+    }
+  }
+
+  .anim4 {
+    transform: scale(1);
+  }
+}
+
+@media (min-width: 576px) {}
+
+@media (min-width: 768px) {}
+
+@media (min-width: 992px) {
+  .navBar {
+    justify-content: space-between;
+    padding: 1rem 2rem;
+
+    .logo {
+      width: 150px;
+    }
+
+    .myNavbarToggler {
+      display: none;
+    }
+
+    .myNavigation {
+      width: 60%;
+      position: static;
+      transform: scale(1);
+      transition: none;
+      box-shadow: none;
+
+      .navbar-nav {
+        @include flexBox(flex, row, space-between, center);
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {}

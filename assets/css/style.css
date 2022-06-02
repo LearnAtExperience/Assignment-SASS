@@ -1,0 +1,107 @@
+/* Google Fonts API */
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+* {
+  font-family: "Quicksand", sans-serif;
+}
+
+.navBar {
+  background-color: #f6f6f6;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 1rem 0;
+  position: relative;
+  z-index: 20;
+}
+.navBar .logo {
+  width: 175px;
+}
+.navBar .myNavbarToggler {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  border-radius: 0;
+  border: 1px solid #808080;
+  background-color: white;
+  padding: 0.3rem;
+}
+.navBar .myNavbarToggler .navbarTogglerLine {
+  display: inline-block;
+  width: 95%;
+  height: 2px;
+  background-color: #000;
+  transition: 500ms;
+}
+.navBar .myNavbarToggler .anim1 {
+  position: absolute;
+  transform: rotate(135deg);
+}
+.navBar .myNavbarToggler .anim2 {
+  position: absolute;
+  transform: translateX(-105%);
+}
+.navBar .myNavbarToggler .anim3 {
+  position: absolute;
+  transform: rotate(-135deg);
+}
+.navBar .myNavigation {
+  width: 90%;
+  position: fixed;
+  top: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+  transform: scale(0);
+  transition: 500ms;
+  border-radius: 0.3rem;
+  font-weight: 600;
+}
+.navBar .myNavigation .navbar-nav {
+  width: 90%;
+}
+.navBar .myNavigation .dropdown-menu {
+  width: 90%;
+}
+.navBar .myNavigation .dropdown-item {
+  color: #13add5;
+  font-weight: 600;
+}
+.navBar .anim4 {
+  transform: scale(1);
+}
+
+@media (min-width: 992px) {
+  .navBar {
+    justify-content: space-between;
+    padding: 1rem 2rem;
+  }
+  .navBar .logo {
+    width: 150px;
+  }
+  .navBar .myNavbarToggler {
+    display: none;
+  }
+  .navBar .myNavigation {
+    width: 60%;
+    position: static;
+    transform: scale(1);
+    transition: none;
+    box-shadow: none;
+  }
+  .navBar .myNavigation .navbar-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
