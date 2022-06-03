@@ -11,6 +11,7 @@ $grey: #808080;
 $lightgrey: #f6f6f6;
 $shadow: rgba(0, 0, 0, 0.5);
 $skyblue: #13add5;
+$darkblue: #1e94b2;
 
 // Variable Declaration ends
 
@@ -24,12 +25,12 @@ $skyblue: #13add5;
 
 // Mixin ends
 
+/* Styling for 360px devices */
+
 .navBar {
   background-color: $lightgrey;
   @include flexBox(flex, row, space-evenly, center);
   padding: 1rem 0;
-  position: relative;
-  z-index: 20;
 
   .logo {
     width: 175px;
@@ -101,9 +102,62 @@ $skyblue: #13add5;
   }
 }
 
+.heroSection {
+  background-color: $lightgrey;
+
+  .heroContentHolder {
+    width: 90%;
+    margin: 0 auto;
+    @include flexBox(flex, column, center, flex-start);
+  }
+
+  .heroCarouselContent {
+    height: 175px;
+    font-size: 30px;
+  }
+
+  .heroContentText {
+    font-weight: 600;
+  }
+
+  .myHeroBtn {
+    width: 45%;
+    height: 50px;
+    @include flexBox(flex, row, space-between, center);
+    background-color: $skyblue;
+    overflow: hidden;
+    border-radius: 0.3rem;
+  }
+
+  .myHeroBtnText {
+    width: 75%;
+    font-weight: 600;
+    color: white;
+    @include flexBox(flex, column, center, center);
+  }
+
+  .myHeroBtn i {
+    width: 25%;
+    height: 100%;
+    padding: 0 0.5rem;
+    background-color: $darkblue;
+    @include flexBox(flex, row, center, center);
+  }
+}
+
+
+
+/* Media Queries starts */
+
+/* Styling for 576px devices */
+
 @media (min-width: 576px) {}
 
+/* Styling for 768px devices */
+
 @media (min-width: 768px) {}
+
+/* Styling for 992px devices */
 
 @media (min-width: 992px) {
   .navBar {
@@ -131,5 +185,7 @@ $skyblue: #13add5;
     }
   }
 }
+
+/* Styling for 1200px devices */
 
 @media (min-width: 1200px) {}
